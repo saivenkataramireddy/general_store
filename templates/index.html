@@ -28,6 +28,7 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#offers">Offers</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="/admin/" class="admin-btn">Admin Login</a></li>
             </ul>
 
             <!-- Hamburger Menu -->
@@ -40,15 +41,29 @@
 
 
         <div class="hero-content">
-            <h1>Welcome to SJMS General Store</h1>
+            <h1>SJMS General Store</h1>
             <p>Fresh groceries, best products at affordable prices!</p>
-            <a href="{% url 'signup' %}"><button class="btn-shop">Shop Now</button></a>
+            <a href="#products"><button class="btn-shop">Shop Now</button></a>
         </div>
     </header>
 
-    <section class="offers" id="offers" style="text-align: center;">
-        <marquee scrollamount="20" direction="right"> <h2>😟 Currently No Offers 😟</h2></marquee>
-    </section><br>
+<section class="offers" id="offers" style="text-align: center;">
+    {% if offers %}
+            <marquee scrollamount="20" direction="right">
+                {% for offer in offers %}
+                    <span style="font-size:22px; font-weight:700;">{{ offer.title }}</span>
+                    &nbsp;
+                    <span style="font-size:18px; color:#00eaff;">{{ offer.description }}</span>
+                    &nbsp;&nbsp;&nbsp;🔥
+                {% endfor %}
+            </marquee>
+    {% else %}
+        <marquee scrollamount="20" direction="right">
+            <h2>😟 Currently No Offers 😟</h2>
+        </marquee>
+    {% endif %}
+</section>
+
 
     <section class="products" id="products">
         <h2>Top Categories</h2>
@@ -120,9 +135,9 @@
         <!-- Store Contact -->
         <div class="footer-box">
             <h3>Contact Info</h3>
-            <p>📍 Location: Near Main Road, Vijayawada, India</p>
-            <p>📞 Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
-            <p>💬 WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">Message Us</a></p>
+            <p>📍 Location: YSR Center, Vengala Reddy Palli Giddaluru</p>
+            <p>📞 Phone: <a href="tel:+919848311061">+91 9848311061</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/919848311061" target="_blank">Message Us</a></p>
             <p>📧 Email: sjmsstore@gmail.com</p>
         </div>
 
@@ -130,7 +145,7 @@
         <div class="footer-box">
             <h3>Opening Hours</h3>
             <p>Mon - Sat : 6:00 AM - 10:00 PM</p>
-            <p>Sunday : 7:00 AM - 9:00 PM</p>
+            <p>Sunday : 6:00 AM - 9:00 PM</p>
         </div>
     </div>
 

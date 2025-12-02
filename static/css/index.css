@@ -18,7 +18,7 @@ body {
 .splash {
     position: fixed;
     inset: 0;
-    background: #0b77e3fa;
+    background: #0b77e3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +101,20 @@ nav {
 .nav-links li a:hover {
     color: #00eaff;
 }
+.admin-btn {
+    background: #00eaff;
+    color: #000 !important;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.admin-btn:hover {
+    background: #0093c4;
+    transform: scale(1.08);
+}
+
 
 .hero-content {
     text-align: center;
@@ -264,3 +278,14 @@ footer {
         text-align: center;
     }
 }
+.product-card a {
+    text-decoration: none;
+    color: inherit; /* keeps text color same as parent */
+    font-weight: 600;
+}
+
+.product-card a:hover {
+    text-decoration: none;
+    color: #000; /* color on hover */
+}
+    

@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const splashText = document.getElementById("splash-text");
     const splashLogo = document.getElementById("splash-logo");
 
-    const text = "SJMS STORES";
+    const text = "WELCOME TO SJMS STORES";
     let index = 0;
 
     function typeEffect() {
         if (index < text.length) {
             splashText.innerHTML += text[index];
             index++;
-            setTimeout(typeEffect, 250); // typing speed
+            setTimeout(typeEffect, 100); // typing speed
         } else {
             // Show Logo after text completes
             setTimeout(() => {
