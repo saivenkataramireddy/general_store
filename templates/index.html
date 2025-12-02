@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJMS Stores</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<!-- Splash Screen -->
+        <div class="splash">
+            <h1 id="splash-text"></h1>
+            <img id="splash-logo" src="{% static 'media/logo.png' %}" alt="SJMS Logo" style="border-radius: 50%;">
+        </div>
+
+    <!-- Main Content -->
+    <header class="hero">
+        <nav>
+            <div class="nav-left">
+                <img class="nav-logo" src="{% static 'media/logo.png' %}" alt="SJMS Logo">
+                <h2 class="logo-text">SJMS Stores</h2>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+
+        <div class="hero-content">
+            <h1>Welcome to SJMS General Store</h1>
+            <p>Fresh groceries, best products at affordable prices!</p>
+            <a href="{% url 'signup' %}"><button class="btn-shop">Shop Now</button></a>
+        </div>
+    </header>
+
+    <section class="offers" id="offers" style="text-align: center;">
+        <marquee scrollamount="20" direction="right"> <h2>😟 Currently No Offers 😟</h2></marquee>
+    </section><br>
+
+    <section class="products" id="products">
+        <h2>Top Categories</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Milk & Curd' %}">🥛 Milk & Curd</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Ice Creams' %}">🍦 Ice Creams</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Daily Groceries' %}">🍚 Daily Groceries</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Electrical Items' %}">🔌 Electrical Items</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Home Utility Items' %}">🚿 Home Utility Items</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Soaps & Detergents' %}">🧼 Soaps & Detergents</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Snacks & Biscuits' %}">🍪 Snacks & Biscuits</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Cool Drinks' %}">🍾 Cool Drinks</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Personal Care' %}">🧴 Personal Care</a>
+            </div>
+
+            <div class="product-card">
+                <a href="{% url 'category_products' 'Agricultural Items' %}">👨‍🌾 Agricultural Items</a>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- About Store -->
+        <div class="footer-box">
+            <h3>SJMS Stores</h3>
+            <p>Your trusted local general store providing fresh groceries,
+               dairy, snacks, beverages, home essentials, and more!</p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Store Contact -->
+        <div class="footer-box">
+            <h3>Contact Info</h3>
+            <p>📍 Location: Near Main Road, Vijayawada, India</p>
+            <p>📞 Phone: <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">Message Us</a></p>
+            <p>📧 Email: sjmsstore@gmail.com</p>
+        </div>
+
+        <!-- Store Timing -->
+        <div class="footer-box">
+            <h3>Opening Hours</h3>
+            <p>Mon - Sat : 6:00 AM - 10:00 PM</p>
+            <p>Sunday : 7:00 AM - 9:00 PM</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 SJMS Stores | Designed & Developed by <b>SJMS Developers</b>
+    </div>
+</footer>
+
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
